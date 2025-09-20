@@ -3,10 +3,6 @@
 This project is part of the **freeCodeCamp JavaScript Algorithms and Data Structures (OOP section)** curriculum.  
 It demonstrates how to build a fully functional **shopping cart system** using **JavaScript, HTML, and CSS**, applying **object-oriented programming concepts**.  
 
-## 📸 Preview  
-
-The app displays a list of desserts with prices, allows adding them to a cart, calculates totals with taxes, and lets users clear the cart.  
-
 ## 🚀 Features  
 
 - ✅ Display desserts dynamically from a products list  
@@ -16,7 +12,7 @@ The app displays a list of desserts with prices, allows adding them to a cart, c
 - ✅ Clear all items with confirmation  
 - ✅ Responsive layout with CSS  
 
-## 🏗️ Tech Stack  
+## 💻 Tech Stack  
 
 - **HTML5** – Structure of the page  
 - **CSS3** – Styling and layout  
@@ -43,7 +39,7 @@ The app displays a list of desserts with prices, allows adding them to a cart, c
   - `calculateTotal()` → Updates subtotal, taxes, and total  
 - Event listeners handle adding products, toggling cart visibility, and clearing items.  
 
-## 🖥️ Usage  
+## 👨‍💻 Usage  
 
 1. Open `index.html` in your browser.  
 2. Browse the dessert list and click **Add to Cart**.  

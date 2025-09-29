@@ -3,9 +3,13 @@
 This project is part of the **freeCodeCamp JavaScript Algorithms and Data Structures (OOP section)** curriculum.  
 It demonstrates how to build a fully functional **shopping cart system** using **JavaScript, HTML, and CSS**, applying **object-oriented programming concepts**.  
 
-## 📸 Preview  
+## 📸 New Version Preview  
 
-The app displays a list of desserts with prices, allows adding them to a cart, calculates totals with taxes, and lets users clear the cart.  
+![Shopping Cart New Version Preview](./new_version_preview.webp)
+
+## 📸 First Version Preview  
+
+![Shopping Cart First Version Preview](./old_version_preview.webp)
 
 ## 🚀 Features  
 

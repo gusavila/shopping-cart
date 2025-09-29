@@ -16,78 +16,91 @@ const products = [
     name: "Vanilla Cupcakes (6 Pack)",
     price: 12.99,
     category: "Cupcake",
+    img: "https://live.staticflickr.com/6066/6101760151_0b17bc8826_b.jpg",
   },
   {
     id: 2,
     name: "French Macaron",
     price: 3.99,
     category: "Macaron",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYrs0JOXzLBytGNE5U6Icy7acbgC3XdcQMdw&s",
   },
   {
     id: 3,
     name: "Pumpkin Cupcake",
     price: 3.99,
     category: "Cupcake",
+    img: "https://images.pexels.com/photos/5633822/pexels-photo-5633822.jpeg",
   },
   {
     id: 4,
     name: "Chocolate Cupcake",
     price: 5.99,
     category: "Cupcake",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvg051dYB_izluh0cpDB2-ionJTNUxnkSacQ&s",
   },
   {
     id: 5,
     name: "Chocolate Pretzels (4 Pack)",
     price: 10.99,
     category: "Pretzel",
+    img: "https://www.weavernut.com/assets/images/02040.jpg",
   },
   {
     id: 6,
     name: "Strawberry Ice Cream",
     price: 2.99,
     category: "Ice Cream",
+    img: "https://live.staticflickr.com/5327/8949446849_05d38b0e3f_b.jpg",
   },
   {
     id: 7,
     name: "Chocolate Macarons (4 Pack)",
     price: 9.99,
     category: "Macaron",
+    img: "https://source.roboflow.com/q2ALvyBvk4a9fZI2YpPJ0gstqTK2/0iLXSO6HyLSF5cEgwTvn/original.jpg",
   },
   {
     id: 8,
     name: "Strawberry Pretzel",
     price: 4.99,
     category: "Pretzel",
+    img: "https://www.weavernut.com/assets/images/69783.jpg",
   },
   {
     id: 9,
     name: "Butter Pecan Ice Cream",
     price: 2.99,
     category: "Ice Cream",
+    img: "https://live.staticflickr.com/5586/15013850098_19ee598858_b.jpg",
   },
   {
     id: 10,
     name: "Rocky Road Ice Cream",
     price: 2.99,
     category: "Ice Cream",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7dLIRJwM5w1hqed22JVYp9dKN9hXPX5rVlQ&s",
   },
   {
     id: 11,
     name: "Vanilla Macarons (5 Pack)",
     price: 11.99,
     category: "Macaron",
+    img: "https://i1.pickpik.com/photos/87/702/373/dessert-macaroon-macaron-food-preview.jpg",
   },
   {
     id: 12,
     name: "Lemon Cupcakes (4 Pack)",
     price: 12.99,
     category: "Cupcake",
+    img: "https://bakesbybrownsugar.com/wp-content/uploads/2022/03/Lemon-Cupcakes-7-500x500.jpg",
   },
 ];
 
-products.forEach(({ name, id, price, category }) => {
+products.forEach(({ name, id, price, category, img }) => {
   dessertCards.innerHTML += `
       <div class="dessert-card">
+        <img src="${img}" width="100" height="100">
         <h2>${name}</h2>
         <p class="dessert-price">$${price}</p>
         <p class="product-category">Category: ${category}</p>
@@ -108,7 +121,7 @@ class ShoppingCart {
 
   addItem(id, products) {
     const product = products.find((item) => item.id === id);
-    const { name, price } = product;
+    const { name, price, img } = product;
     this.items.push(product);
 
     const totalCountPerProduct = {};
@@ -125,11 +138,12 @@ class ShoppingCart {
     currentProductCount > 1
       ? (currentProductCountSpan.textContent = `${currentProductCount}x`)
       : (productsContainer.innerHTML += `
-      <div id="dessert${id}" class="product">
+      <div id="dessert${id}" class="product cart-items">
+        <img src="${img}" width="40px" height="40px">
         <p>
           <span class="product-count" id="product-count-for-id${id}"></span>${name}
         </p>
-        <p>${price}</p>
+        <p>$${price}</p>
       </div>
       `);
   }
@@ -188,7 +202,7 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 cartBtn.addEventListener("click", () => {
   isCartShowing = !isCartShowing;
   showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show";
-  cartContainer.style.display = isCartShowing ? "block" : "none";
+  cartContainer.style.display = isCartShowing ? "flex" : "none";
 });
 
 clearCartBtn.addEventListener("click", cart.clearCart.bind(cart));
